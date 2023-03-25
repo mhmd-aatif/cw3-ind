@@ -51,6 +51,8 @@
         :products="products"
         :cart="cart"
         :displayCart="displayCart"
+        :sortedProducts="sortedProducts"
+        :results="results"
         @addItem="addItem"
         @canAdd="canAdd"
       />
@@ -145,6 +147,61 @@ export default {
         // if (productToUpdate) {
         //   productToUpdate.displaySpace -= 1;
         // }
+      }
+    },
+    sortedProducts() {
+      // const vm = this;
+      let x, y;
+      if (this.search !== "") {
+        //to search the lessons
+        const query = this.search.toLowerCase();
+        return this.products.filter(
+          (product) =>
+            product.title.toLowerCase().includes(query) ||
+            product.location.toLowerCase().includes(query) ||
+            product.price.toString().includes(query)
+        );
+      } else {
+        switch (this.sort.order) {
+          case "a":
+            x = 1;
+            y = -1;
+            break;
+          case "d":
+            x = -1;
+            y = 1;
+            break;
+        }
+
+        let compare;
+
+        if (this.sort.by == "Subject") {
+          compare = function (a, b) {
+            if (a.title > b.title) return x;
+            if (a.title < b.title) return y;
+            return 0;
+          };
+        } else if (this.sort.by == "Location") {
+          compare = function (a, b) {
+            if (a.location > b.location) return x;
+            if (a.location < b.location) return y;
+            return 0;
+          };
+        } else if (this.sort.by == "Price") {
+          compare = function (a, b) {
+            if (a.price > b.price) return x;
+            if (a.price < b.price) return y;
+            return 0;
+          };
+        } else if (this.sort.by == "Space") {
+          compare = function (a, b) {
+            if (a.displaySpace > b.displaySpace) return x;
+            if (a.displaySpace < b.displaySpace) return y;
+            return 0;
+          };
+        }
+
+        return this.products.sort(compare);
       }
     },
     showCheckout() {

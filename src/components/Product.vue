@@ -1,6 +1,6 @@
 <template>
   <div id="products">
-    <div id="product" v-for="product in products" :key="product.id">
+    <div id="product" v-for="product in sortedProducts()" :key="product.id">
       <div id="details">
         <p>Subject: {{ product.title }}</p>
         <p>Location: {{ product.location }}</p>
@@ -42,7 +42,7 @@
 <script>
 export default {
   name: "ProductDetails",
-  props: ["products", "cart", "displayCart"],
+  props: ["products", "cart", "displayCart", "sortedProducts", "results"],
   data() {
     return {};
   },

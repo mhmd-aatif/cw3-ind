@@ -93,7 +93,9 @@
         /><label for="business">Business</label>
       </p>
       <!-- <button id="placeB" @click="submitForm" v-if="canPlaceOrder"> -->
-      <button id="placeB" @click="submitForm">Place Order</button>
+      <button id="placeB" @click="submitForm" v-if="canPlaceOrder(order)">
+        Place Order
+      </button>
     </div>
   </div>
 </template>
@@ -112,13 +114,23 @@ export default {
     submitForm() {
       this.$emit("submitForm");
     },
+    canPlaceOrder(order) {
+      return (
+        order.firstName.match(/^[A-Za-z]+$/) &&
+        order.lastName.match(/^[A-Za-z]+$/) &&
+        order.address != "" &&
+        order.city.match(/^[A-Za-z]+$/) &&
+        order.phone != "" &&
+        order.state != ""
+      );
+    },
     // canPlaceOrder() {
     //   //   this.$emit("canPlaceOrder");
 
     //   return this.$parent.canPlaceOrder;
     // },
   },
-
+  computed: {},
   //   created: function () {
   //     // retrieving data from the server
   //     const vm = this;
