@@ -1,7 +1,4 @@
 <template>
-  <!-- <header>
-    <title>Lessons Store</title>
-  </header> -->
   <div id="app">
     <div id="header">
       <h2>LESSONS STORE</h2>
@@ -87,8 +84,6 @@
 </template>
 
 <script>
-// import productList from "./components/ProductList.vue";
-// import checkout from "./components/Form.vue";
 import product from "./components/Product.vue";
 import cart from "./components/Cart.vue";
 export default {
@@ -142,15 +137,9 @@ export default {
           image: product.image,
           rating: product.rating,
         });
-
-        // const productToUpdate = this.products.find((p) => p.id === product.id);
-        // if (productToUpdate) {
-        //   productToUpdate.displaySpace -= 1;
-        // }
       }
     },
     sortedProducts() {
-      // const vm = this;
       let x, y;
       if (this.search !== "") {
         //to search the lessons
