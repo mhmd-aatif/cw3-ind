@@ -1,4 +1,5 @@
 <template>
+  <!-- Main Component -->
   <div id="app">
     <div id="header">
       <h2>LESSONS STORE</h2>
