@@ -239,41 +239,6 @@ export default {
 
       this.order.cart = text.slice(0, -2);
 
-      // // to post the order details
-      // fetch("http://localhost:3000/collection/orders", {
-      //   method: "POST",
-      //   body: JSON.stringify({
-      //     coursestaken: this.order.cart,
-      //     totalcourses: this.cart.length,
-      //     firstName: this.order.firstName,
-      //     lastName: this.order.lastName,
-      //     address: this.order.address,
-      //     city: this.order.city,
-      //     phone: this.order.phone,
-      //     emirate: this.order.state,
-      //     gift: this.order.gift,
-      //     method: this.order.method,
-      //   }),
-      //   headers: {
-      //     "Content-type": "application/json; charset=UTF-8",
-      //   },
-      // })
-      //   .then((response) => response.json())
-      //   .then((json) => console.log(json))
-      //   .catch((error) => console.error(error));
-
-      // // to update the spaces of the lessons
-      // fetch("http://localhost:3000/lessons", {
-      //   method: "PUT",
-      //   headers: {
-      //     "Content-type": "application/json; charset=UTF-8",
-      //   },
-      //   body: JSON.stringify(this.products),
-      // })
-      //   .then((response) => response.json())
-      //   .then((result) => console.log(result))
-      //   .catch((error) => console.error(error));
-
       this.showPlaceOrder = true;
     },
     removeItem(product) {
