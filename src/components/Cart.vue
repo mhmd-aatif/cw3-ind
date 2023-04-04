@@ -92,7 +92,6 @@
           v-model="order.method"
         /><label for="business">Business</label>
       </p>
-      <!-- <button id="placeB" @click="submitForm" v-if="canPlaceOrder"> -->
       <button id="placeB" @click="submitForm" v-if="canPlaceOrder(order)">
         Place Order
       </button>
@@ -124,23 +123,7 @@ export default {
         order.state != ""
       );
     },
-    // canPlaceOrder() {
-    //   //   this.$emit("canPlaceOrder");
-
-    //   return this.$parent.canPlaceOrder;
-    // },
   },
-  computed: {},
-  //   created: function () {
-  //     // retrieving data from the server
-  //     const vm = this;
-  //     fetch("http://localhost:3000/lessons").then(function (response) {
-  //       response.json().then(function (json) {
-  //         // storing the response
-  //         vm.products = json;
-  //       });
-  //     });
-  //   },
 };
 </script>
 
