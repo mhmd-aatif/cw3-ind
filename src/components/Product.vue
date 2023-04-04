@@ -1,4 +1,5 @@
 <template>
+  <!-- Child Component -->
   <div id="products">
     <div id="product" v-for="product in sortedProducts()" :key="product.id">
       <div id="details">

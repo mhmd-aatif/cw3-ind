@@ -1,4 +1,5 @@
 <template>
+  <!-- Child Component -->
   <div>
     <div id="bucket">
       <h2>Cart</h2>
