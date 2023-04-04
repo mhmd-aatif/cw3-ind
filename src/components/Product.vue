@@ -48,30 +48,15 @@ export default {
   },
   methods: {
     cartCount(id) {
-      // this.$emit("cartCount", id);
-
       return this.$parent.cartCount(id);
     },
     addItem(product) {
       this.$emit("addItem", product);
     },
     canAdd(product) {
-      // this.$emit("canAdd", product);
-
       return this.$parent.canAdd(product);
     },
   },
-
-  //   created: function () {
-  //     // retrieving data from the server
-  //     const vm = this;
-  //     fetch("http://localhost:3000/lessons").then(function (response) {
-  //       response.json().then(function (json) {
-  //         // storing the response
-  //         vm.products = json;
-  //       });
-  //     });
-  //   },
 };
 </script>
 
