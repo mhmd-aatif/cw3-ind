@@ -1,24 +1,4 @@
-# cw3-ind
+## Links
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+GitHub Repository Link: https://github.com/mhmd-aatif/cw3-ind <br>
+Github Pages Link: https://mhmd-aatif.github.io/cw3-ind/
